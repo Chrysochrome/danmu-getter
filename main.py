@@ -40,6 +40,7 @@ dmc = DanMuClient(sys.argv[1].strip())  #
 
 if not dmc.isValid():
     print('Url not valid')
+    exit()
 
 
 @dmc.danmu
@@ -56,8 +57,6 @@ def gift_fn(msg):
 
 @dmc.other
 def other_fn(msg):
-    # pp('Other message received.')
-    # print(msg)
     pass
 
 
