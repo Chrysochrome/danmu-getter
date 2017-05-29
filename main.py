@@ -18,8 +18,7 @@ def gift_content(msg):
         if msg['Content'] in douyu:
             msg['Content'] = douyu[msg['Content']]
     else:
-        print('Illegal URL, try again.')
-        exit()
+        pass
 
 
 def pd(msg):
