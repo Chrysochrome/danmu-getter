@@ -22,11 +22,13 @@ def gift_content(msg):
 
 
 def pd(msg):
-    print(msg)
+    if 'nodanmu' not in sys.argv:
+        print(msg)
 
 
 def pg(msg):
-    print(colored(msg, 'yellow'))
+    if 'nogift' not in sys.argv:
+        print(colored(msg, 'yellow'))
 
 
 # dmc = DanMuClient('https://www.douyu.com/962')             #debug
