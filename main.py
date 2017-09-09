@@ -10,6 +10,7 @@ douyu = {'825': '嘉年华火箭', '195': '飞机', '750': '办卡', '193': '弱
          'cq': '酬勤'}
 
 
+# Generate content
 def gift_content(msg):
     if re.match(r'^(?:http://)?.*?live.bilibili.com/(.+?)$', sys.argv[1]):
         msg['Content'] = msg['data']['giftName']
@@ -21,6 +22,7 @@ def gift_content(msg):
         pass
 
 
+# print format
 def pd(msg):
     if 'nodanmu' not in sys.argv:
         print(msg)
@@ -31,20 +33,20 @@ def pg(msg):
         print(colored(msg, 'yellow'))
 
 
-# dmc = DanMuClient('https://www.douyu.com/962')             #debug
-# dmc = DanMuClient('https://live.bilibili.com/545342')      #debug
-
 if sys.argv.__len__() is 1:
-    print('usage: main.py [url]')
+    print('usage: main.py [url] <parameter>')
     exit()
 
-dmc = DanMuClient(sys.argv[1].strip())  #
+
+# create client
+dmc = DanMuClient(sys.argv[1].strip())
 
 if not dmc.isValid():
     print('Url not valid')
     exit()
 
 
+# print action
 @dmc.danmu
 def danmu_fn(msg):
     pd('[%s] %s' % (msg['NickName'], msg['Content']))
