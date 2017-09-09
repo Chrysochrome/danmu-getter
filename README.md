@@ -1,14 +1,18 @@
 # danmu-getter
 ### A live danmu getter.
 
-Usage: python3 main.py [URL]
+Usage: python3 main.py [URL] \<parameter\>
 
 Now support:
 * live.bilibili.com
 * douyu.com
 
+parameter:
+* nodanmu - do not show danmuku
+* nogift - do not show gift
+
 ## Installation
-First you need to install <a herf="https://github.com/littlecodersh/danmu">danmu</a> use:
+First you need to install package 'danmu' use:
 
 ```bash
 sudo pip install termcolor
